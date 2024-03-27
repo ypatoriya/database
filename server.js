@@ -8,6 +8,7 @@ var corOption = {
 
 const router = require('./routes/employeeRoutes');
 
+
 app.use('/api/getEmployees', router);
 
 
@@ -16,8 +17,6 @@ app.use('/api/getEmployees', router);
 app.use(cors(corOption));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-
 
 
 

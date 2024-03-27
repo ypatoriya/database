@@ -1,4 +1,5 @@
 //module.exports=(sequelize,DataTypes)=>{
+
     const {DataTypes}=require('sequelize')
     const Sequelize = require('./index')
     const employee=Sequelize.define('employee',{
@@ -17,6 +18,7 @@
             type:DataTypes.STRING
         }
     })
+    
     // return employee
 // }
 module.exports = employee
