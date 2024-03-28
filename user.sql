@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 27, 2024 at 06:22 AM
+-- Generation Time: Mar 28, 2024 at 03:11 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -24,6 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `department`
+--
+
+DROP TABLE IF EXISTS `department`;
+CREATE TABLE IF NOT EXISTS `department` (
+  `department_name` varchar(50) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`department_name`, `id`) VALUES
+('development', 1),
+('design', 2),
+('testing', 3),
+('mobile', 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userdata`
 --
 
@@ -38,15 +61,17 @@ CREATE TABLE IF NOT EXISTS `userdata` (
   `hobbies` varchar(255) NOT NULL,
   `departmentId` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `userdata`
 --
 
 INSERT INTO `userdata` (`id`, `firstName`, `lastName`, `email`, `password`, `gender`, `hobbies`, `departmentId`) VALUES
-(1, 'Yagnesh', 'Patoriya', 'mail@mail.com', 'password', '', 'play, write', 0),
-(2, 'Savan', 'Ponda', 'mail@mail.com', 'sp', '', 'sing, football', 0);
+(1, 'Yagnesh', 'Patoriya', 'mail@mail.com', 'password', '', 'play, write', 1),
+(2, 'Savan', 'Ponda', 'mail@mail.com', 'sp', '', 'sing, football', 2),
+(3, 'niknj', 'k', 'nikunj@mail.com', '$2b$10$lWAPXJ1u0apSMcLFR.yzquaY3UEacGn/S0St5QM9DIUlBOO5T2xj2', 'male', 'play, sing', 4),
+(4, 'dhrual', 'k', 'dhruval@mail.com', '$2b$10$uZdLydDE99KDZN0FqCKO4.EDTaSUoibUEsBNfjkToMWTDtduOD1vi', 'male', 'play, sing', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
